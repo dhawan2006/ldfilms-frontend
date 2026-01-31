@@ -431,5 +431,35 @@ body {
     font-size: 14px;
 }
 
+/* CONTACT PAGE MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .contact-nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .contact-nav a {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .contact-nav .logo {
+        font-size: 36px;
+        margin: 10px 0;
+    }
+
+    .contact-form-section {
+        padding: 50px 15px;
+    }
+
+    .contact-form-section h1 {
+        font-size: 30px;
+    }
+
+}
 
 
