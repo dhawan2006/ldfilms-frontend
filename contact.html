@@ -161,7 +161,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
     try {
 
-        const response = await fetch("http://localhost:5000/contact", {
+        const response = await fetch("http://localhost:8000/contact", {
 
             method: "POST",
 
@@ -193,9 +193,12 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
     }
 
-    catch{
+    catch (error) {
+        
+        // This will print the REAL error in your browser console (F12)
+        console.error("❌ FETCH ERROR:", error);
 
-        status.innerText = "❌ Server not connected";
+        status.innerText = "❌ Server not connected (Check Console)";
 
     }
 
