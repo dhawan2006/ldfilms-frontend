@@ -1,3 +1,7 @@
+/* ======================================================
+   RESET & GLOBAL
+====================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,20 +12,54 @@ body {
     font-family: 'Cormorant Garamond', serif;
 }
 
-/* HERO IMAGE */
+
+/* ======================================================
+   HERO SECTION
+====================================================== */
+
 .hero {
     width: 100%;
-    height: 100vh; /* full screen */
+    height: 100vh;
     position: relative;
-    background-image: url("bg.jpg");
+    overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 60%;
-    transition: background-image 0.6s ease-in-out;
+    transition: background-image 0.3s ease-in-out;
 }
 
 
-/* NAVBAR */
+/* ======================================================
+   SLIDER
+====================================================== */
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+
 .navbar {
     position: absolute;
     top: 0;
@@ -37,11 +75,9 @@ body {
     justify-content: space-between;
 
     color: #fff;
-    z-index: 10;
+    z-index: 30;
 }
 
-
-/* MENU LINKS */
 .nav-group a {
     text-decoration: none;
     color: white;
@@ -51,35 +87,48 @@ body {
     font-weight: 400;
 }
 
-/* CENTER LOGO */
 .logo {
     font-size: 42px;
     letter-spacing: 6px;
     font-weight: 400;
 }
 
-/* SLIDER CONTROLS */
+
+/* ======================================================
+   SLIDER CONTROLS
+====================================================== */
+
 .slider-controls {
     position: absolute;
     bottom: 150px;
     left: 0;
     width: 100%;
     padding: 0 80px;
+
     display: flex;
     justify-content: space-between;
+
     pointer-events: none;
+    z-index: 20;
 }
 
-/* LUXURY ARROWS */
+
+/* Arrows */
+
 .arrow {
     pointer-events: all;
+
     width: 100px;
     height: 1px;
+
     background: rgba(255, 255, 255, 0.8);
     border: none;
+
     position: relative;
     cursor: pointer;
+
     opacity: 0.8;
+
     transition: opacity 0.3s, transform 0.3s;
 }
 
@@ -88,14 +137,17 @@ body {
     transform: scale(1.1);
 }
 
-/* ARROW HEADS */
 .arrow::after {
     content: "";
+
     position: absolute;
+
     width: 10px;
     height: 10px;
+
     border-top: 1px solid white;
     border-right: 1px solid white;
+
     top: 50%;
 }
 
@@ -108,20 +160,23 @@ body {
     right: 0;
     transform: translateY(-50%) rotate(45deg);
 }
-/* BOTTOM TEXT BLOCK */
+
+
+/* ======================================================
+   BOTTOM TEXT
+====================================================== */
+
 .bottom-text {
     width: 100%;
     text-align: center;
+
     padding: 60px 0;
 
     background: #f8f6f2;
     color: #222;
 }
 
-
-/* TAGLINE */
 .tagline {
-    
     font-size: 15px;
     letter-spacing: 2px;
     font-weight: 300;
@@ -133,6 +188,7 @@ body {
     letter-spacing: 2px;
     text-decoration: none;
     color: #222;
+
     opacity: 0.7;
     transition: opacity 0.3s;
 }
@@ -140,16 +196,20 @@ body {
 .insta:hover {
     opacity: 1;
 }
-/* FOOTER / INSTA SECTION */
+
+
+/* ======================================================
+   INSTAGRAM / FOOTER
+====================================================== */
 
 .insta-section {
     background: #f8f6f2;
     padding: 80px 0;
+
     text-align: center;
     color: #333;
 }
 
-/* Title */
 .insta-title {
     font-size: 14px;
     letter-spacing: 3px;
@@ -157,10 +217,10 @@ body {
     font-weight: 400;
 }
 
-/* Instagram Grid */
 .insta-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+
     max-width: 1100px;
     margin: 0 auto 40px;
 }
@@ -168,20 +228,20 @@ body {
 .insta-grid img {
     width: 100%;
     height: 180px;
+
     object-fit: cover;
 }
 
-/* Handle */
 .insta-handle {
     font-size: 14px;
     letter-spacing: 2px;
     margin-bottom: 25px;
 }
 
-/* Social Icons */
 .social-icons a {
     color: #777;
     margin: 0 12px;
+
     font-size: 20px;
     transition: 0.3s;
 }
@@ -190,7 +250,6 @@ body {
     color: #000;
 }
 
-/* Footer Menu */
 .footer-nav {
     margin: 40px 0 25px;
 }
@@ -198,39 +257,46 @@ body {
 .footer-nav a {
     text-decoration: none;
     color: #333;
+
     margin: 0 18px;
     font-size: 13px;
     letter-spacing: 2px;
 }
 
-/* Copyright */
 .copyright {
     font-size: 12px;
     color: #888;
 }
 
-/* LONG THIN SCROLL ARROW */
+
+/* ======================================================
+   SCROLL ICON
+====================================================== */
 
 .scroll-top {
     margin-top: 50px;
+
     display: flex;
     justify-content: center;
+
     cursor: pointer;
 }
 
-/* Main line */
 .scroll-line {
     width: 1px;
     height: 50px;
+
     background: #777;
+
     position: relative;
+
     transition: 0.6s;
     opacity: 0.6;
 }
 
-/* Arrow head */
 .scroll-line::after {
     content: "";
+
     position: absolute;
     top: 0;
     left: 50%;
@@ -240,12 +306,12 @@ body {
 
     border-left: 1px solid #777;
     border-top: 1px solid #777;
+
     opacity: 0.6;
 
     transform: translateX(-50%) rotate(45deg);
 }
 
-/* Hover effect */
 .scroll-top:hover .scroll-line {
     background: #000;
 }
@@ -254,7 +320,290 @@ body {
     border-color: #000;
 }
 
-/* RESPONSIVE */
+
+/* ======================================================
+   CONTACT PAGE
+====================================================== */
+
+.contact-page {
+    background: #f7f4ee;
+    color: #333;
+}
+
+.contact-hero {
+    height: 60vh;
+    background: url("bg2.jpg") center/cover;
+
+    position: relative;
+}
+
+.contact-hero .overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0,0,0,0.4);
+}
+
+
+/* Contact Nav */
+
+.contact-nav {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 60px;
+
+    padding: 30px;
+
+    color: white;
+}
+
+.contact-nav a {
+    color: white;
+    text-decoration: none;
+
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.contact-nav .logo {
+    font-size: 32px;
+}
+
+
+/* Contact Form */
+
+.contact-form-section {
+    max-width: 700px;
+
+    margin: auto;
+    padding: 80px 20px;
+
+    text-align: left;
+}
+
+.contact-form-section h1 {
+    text-align: center;
+    font-size: 42px;
+}
+
+.contact-form-section p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 25px;
+
+    font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+
+    width: 100%;
+
+    padding: 12px;
+    margin-top: 5px;
+
+    border: none;
+    background: #fff;
+
+    border-radius: 3px;
+
+    font-size: 14px;
+}
+
+.checkbox-group {
+    margin-top: 10px;
+}
+
+.checkbox-group label {
+    display: block;
+    font-size: 14px;
+}
+
+.contact-form button {
+
+    margin-top: 40px;
+    padding: 12px 40px;
+
+    background: #9c8c6a;
+    border: none;
+
+    color: white;
+
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#formStatus {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+
+/* ======================================================
+   PORTFOLIO
+====================================================== */
+
+.portfolio {
+    width: 100%;
+    padding: 120px 8%;
+
+    background: #faf9f7;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 40px;
+    column-gap: 200px;
+
+    align-items: start;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.portfolio-hero {
+    width: 100%;
+    height: 90vh;
+
+    background:
+        linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+        url("bg.jpg");
+
+    background-size: cover;
+    background-position: center 60%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+}
+
+.portfolio-hero h1 {
+    position: relative;
+
+    color: white;
+
+    font-size: 64px;
+    letter-spacing: 6px;
+    font-weight: 400;
+
+    margin-top: 550px;
+
+    text-transform: uppercase;
+
+    z-index: 2;
+}
+
+.portfolio-item {
+    text-align: center;
+}
+
+.portfolio-item h2 {
+    font-size: 36px;
+    font-weight: 400;
+
+    letter-spacing: 3px;
+
+    color: #7b6a58;
+
+    margin-bottom: 40px;
+    line-height: 1.3;
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 600px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-img img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.portfolio-img:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-item.right {
+    margin-top: 150px;
+}
+
+
+/* ======================================================
+   PORTFOLIO NAVBAR FIX
+====================================================== */
+
+.portfolio-page .navbar {
+    position: sticky;
+    top: 0;
+
+    background: #fff;
+    color: #222;
+
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.portfolio-page .nav-group a {
+    color: #222;
+}
+
+.portfolio-hero .navbar {
+    position: absolute;
+    top: 60;
+    left: 0;
+
+    width: 100%;
+
+    background: transparent;
+    color: white;
+
+    box-shadow: none;
+}
+
+.portfolio-hero .nav-group a,
+.portfolio-hero .logo {
+    color: white;
+}
+
+.portfolio-text {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.portfolio-text h2 {
+    margin-bottom: 4px;
+}
+
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
 
 @media (max-width: 900px) {
 
@@ -273,6 +622,27 @@ body {
 
     .insta-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portfolio {
+        padding: 80px 5%;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+
+    .portfolio-item.right {
+        margin-top: 0;
+    }
+
+    .portfolio-item h2 {
+        font-size: 28px;
+    }
+
+    .portfolio-img img {
+        height: 450px;
     }
 }
 
@@ -303,141 +673,11 @@ body {
     .insta {
         font-size: 16px;
     }
-}
-
-/* CONTACT PAGE OVERLAY */
-/* CONTACT PAGE DESIGN */
-
-.contact-page {
-    background: #f7f4ee;
-    font-family: 'Cormorant Garamond', serif;
-    color: #333;
-}
-
-
-/* HERO */
-
-.contact-hero {
-    height: 60vh;
-    background: url("bg2.jpg") center/cover;
-    position: relative;
-}
-
-.contact-hero .overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-}
-
-
-/* NAV */
-
-.contact-nav {
-    position: relative;
-    z-index: 2;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;   /* center everything */
-
-    gap: 60px;                /* control spacing here */
-
-    padding: 30px;
-    color: white;
-}
-
-
-.contact-nav a {
-    color: white;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-size: 12px;
-}
-
-.contact-nav .logo {
-    font-size: 32px;
-}
-
-
-
-
-/* FORM */
-
-.contact-form-section {
-    max-width: 700px;
-    margin: auto;
-    padding: 80px 20px;
-    text-align: left;
-}
-
-.contact-form-section h1 {
-    text-align: center;
-    font-size: 42px;
-}
-
-.contact-form-section p {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-
-.contact-form label {
-    display: block;
-    margin-top: 25px;
-    font-size: 14px;
-}
-
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: none;
-    background: #fff;
-    border-radius: 3px;
-    font-size: 14px;
-
-}
-
-
-.checkbox-group {
-    margin-top: 10px;
-}
-
-.checkbox-group label {
-    display: block;
-    font-size: 14px;
-}
-
-
-.contact-form button {
-
-    margin-top: 40px;
-    padding: 12px 40px;
-    background: #9c8c6a;
-    border: none;
-    color: white;
-    letter-spacing: 2px;
-    cursor: pointer;
-
-}
-
-
-#formStatus {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-/* CONTACT PAGE MOBILE RESPONSIVE */
-
-@media (max-width: 600px) {
 
     .contact-nav {
         flex-direction: column;
         gap: 15px;
+
         padding: 20px 10px;
         text-align: center;
     }
@@ -459,7 +699,4 @@ body {
     .contact-form-section h1 {
         font-size: 30px;
     }
-
 }
-
-
